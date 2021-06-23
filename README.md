@@ -7,11 +7,10 @@ Download
 git clone git@github.com:JBtje/vue3pdf-demo.git
 ```
 
-Installation
+Install Composer
 
 ```
 composer install
-npm install
 ```
 
 The below commands will copy the .env.example to .env, and fill in the secrets.
@@ -19,6 +18,12 @@ The below commands will copy the .env.example to .env, and fill in the secrets.
 ```
 cp .env.example .env
 php artisan key:generate
+```
+
+Install NPM
+
+```
+npm install
 ```
 
 Run migrations (database is not needed for this demo)
