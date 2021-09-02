@@ -1,6 +1,7 @@
 const mix         = require( 'laravel-mix' );
 const webpack     = require( 'webpack' );
 const tailwindcss = require( 'tailwindcss' );
+const del         = require( 'del' );
 
 require( 'dotenv' ).config();
 
@@ -39,7 +40,7 @@ mix.webpackConfig( {
                 options: {appendTsSuffixTo: [/\.vue$/]},
                 exclude: /node_modules/,
             },
-        ],
+        ]
     },
     plugins: [
         // Inject the website version from packages.json, into the build.
@@ -60,6 +61,8 @@ mix.vue( {
 console.log( '------------------------------------' );
 console.log( 'Building site version ' + process.env.npm_package_version );
 console.log( '------------------------------------' );
+// del( ['public/*.worker.js'] );
+
 
 mix.i18n()
    .js( 'resources/js/app.ts', 'public/js' )
